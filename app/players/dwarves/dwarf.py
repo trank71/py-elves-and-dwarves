@@ -5,7 +5,7 @@ class Dwarf(Player):
     def __init__(self
                  , nickname: str
                  , favourite_dish: str
-    ) -> None:
+                ) -> None:
         super().__init__(nickname)
         self._favourite_dish = favourite_dish
 
