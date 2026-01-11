@@ -39,7 +39,13 @@ class Dwarf(Player):
 
 
 class ElfRanger(Elf):
-    pass
+    def __init__(self
+                 , nickname: str
+                 , musical_instrument: str
+                 , bow_level: int
+                 ) -> None:
+        super().__init__(nickname, musical_instrument)
+        self._bow_level = bow_level
 
 
 class Druid(Elf):
