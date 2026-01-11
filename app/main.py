@@ -23,7 +23,8 @@ class Elf(Player):
         self._musical_instrument = musical_instrument
 
     def play_elf_song(self) -> None:
-        print(f"{self.nickname} is playing a song on the {self._musical_instrument}")
+        print(f"{self.nickname} is playing"
+              f" a song on the {self._musical_instrument}")
 
 
 class Dwarf(Player):
@@ -35,7 +36,8 @@ class Dwarf(Player):
         self._favourite_dish = favourite_dish
 
     def eat_favourite_dish(self) -> None:
-        print(f"{self.nickname} is eating {self._favourite_dish}")
+        print(f"{self.nickname} "
+              f"is eating {self._favourite_dish}")
 
 
 class ElfRanger(Elf):
@@ -47,6 +49,11 @@ class ElfRanger(Elf):
         super().__init__(nickname, musical_instrument)
         self._bow_level = bow_level
 
+    def player_info(self) -> str:
+        return (f"Elf ranger {self.nickname}"
+                f". {self.nickname} has bow of "
+                f"the {self._bow_level} level")
+
 
 class Druid(Elf):
     def __init__(self
@@ -56,6 +63,11 @@ class Druid(Elf):
                  ) -> None:
         super().__init__(nickname, musical_instrument)
         self._favourite_spell = favourite_spell
+
+    def player_info(self) -> str:
+        return (f"Druid {self.nickname}"
+                f". {self.nickname} has a favourite "
+                f"spell: {self._favourite_spell}")
 
 
 class DwarfWarrior(Dwarf):
@@ -67,6 +79,11 @@ class DwarfWarrior(Dwarf):
         super().__init__(nickname, favourite_dish)
         self._hummer_level = hummer_level
 
+    def player_info(self) -> str:
+        return (f"Dwarf warrior {self.nickname}"
+                f". {self.nickname} has a hummer "
+                f"of the {self._hummer_level} level")
+
 
 class DwarfBlacksmith(Dwarf):
     def __init__(self
@@ -76,3 +93,7 @@ class DwarfBlacksmith(Dwarf):
                  ) -> None:
         super().__init__(nickname, favourite_dish)
         self._skill_level = skill_level
+
+    def player_info(self) -> str:
+        return (f"Dwarf blacksmith {self.nickname} "
+                f"with skill of the {self._skill_level} level")
