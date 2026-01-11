@@ -59,7 +59,13 @@ class Druid(Elf):
 
 
 class DwarfWarrior(Dwarf):
-    pass
+    def __init__(self
+                 , nickname: str
+                 , favourite_dish: str
+                 , hummer_level: int
+                 ) -> None:
+        super().__init__(nickname, favourite_dish)
+        self._hummer_level = hummer_level
 
 
 class DwarfBlacksmith(Dwarf):
