@@ -109,3 +109,7 @@ class DwarfBlacksmith(Dwarf):
 
     def get_rating(self) -> int:
         return self._skill_level
+
+
+def calculate_team_total_rating(team: list[Player]) -> int:
+    return sum(player.get_rating() for player in team)
